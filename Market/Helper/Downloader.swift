@@ -38,7 +38,6 @@ func uploadImages(images: [UIImage?], itemId: String, completion: @escaping (_ i
     }
 }
 
-
 func saveImageInFirebase(imageData: Data, fileName: String, completion: @escaping (_ imageLink: String?) -> Void) {
     
     var task: StorageUploadTask!
