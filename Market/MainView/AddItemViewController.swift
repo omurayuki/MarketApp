@@ -21,14 +21,21 @@ class AddItemViewController: UIViewController {
         print(category.id)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 60, height: 50), type: .ballPulse, color: .systemBlue, padding: nil)
+    }
+    
     @IBAction func doneBarButtonItemPressed(_ sender: Any) {
         dismissKeyboard()
         
         if fieldsAreCompleted() {
             saveToFirebase()
         } else {
-            print("error")
-            
+            self.hud.textLabel.text = "All Fields are required!"
+            self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+            self.hud.show(in: self.view)
+            self.hud.dismiss(afterDelay: 2.0)
         }
     }
     
@@ -54,6 +61,8 @@ class AddItemViewController: UIViewController {
     }
     
     private func saveToFirebase() {
+        
+        showLoadingIndicator()
         let item = Item()
         item.id = UUID().uuidString
         item.name = titleTextField.text!
@@ -66,10 +75,26 @@ class AddItemViewController: UIViewController {
                 item.imageLinks = imageLinkArray
                 saveItemToFirestore(item)
                 self.popTheView()
+                self.hideLoadingIndicator()
             }
         } else {
             saveItemToFirestore(item)
             popTheView()
+            hideLoadingIndicator()
+        }
+    }
+    
+    private func showLoadingIndicator() {
+        if activityIndicator != nil {
+            self.view.addSubview(activityIndicator!)
+            activityIndicator?.startAnimating()
+        }
+    }
+    
+    private func hideLoadingIndicator() {
+        if activityIndicator != nil {
+            activityIndicator?.removeFromSuperview()
+            activityIndicator?.stopAnimating()
         }
     }
     
