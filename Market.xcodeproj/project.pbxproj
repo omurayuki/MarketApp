@@ -28,6 +28,7 @@
 		C95679B92371EDA300B0BAF0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C95679B82371EDA300B0BAF0 /* GoogleService-Info.plist */; };
 		C9701F292372AC6100CAD944 /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9701F282372AC6100CAD944 /* FirebaseCollectionReference.swift */; };
 		C9701F2E2372B1DF00CAD944 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9701F2D2372B1DF00CAD944 /* Category.swift */; };
+		C9B6195C23740808002B1467 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6195B23740808002B1467 /* ItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		C95679B82371EDA300B0BAF0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9701F282372AC6100CAD944 /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
 		C9701F2D2372B1DF00CAD944 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		C9B6195B23740808002B1467 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		DB597859E0E3564867DF7B02 /* Pods-MarketUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarketUITests/Pods-MarketUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F466C0A03170DF2370966F07 /* Pods-Market.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.release.xcconfig"; path = "Pods/Target Support Files/Pods-Market/Pods-Market.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				C95679B62371EBB100B0BAF0 /* CategoryCollectionViewCell.swift */,
+				C9B6195B23740808002B1467 /* ItemTableViewCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				C923B0092371E19B0097C25F /* AppDelegate.swift in Sources */,
 				C93D00642372F25200C174BE /* ItemsTableViewController.swift in Sources */,
 				C9701F292372AC6100CAD944 /* FirebaseCollectionReference.swift in Sources */,
+				C9B6195C23740808002B1467 /* ItemTableViewCell.swift in Sources */,
 				C93D00682373328500C174BE /* AddItemViewController.swift in Sources */,
 				C923B00B2371E19B0097C25F /* SceneDelegate.swift in Sources */,
 				C93D00622372B3A300C174BE /* Constants.swift in Sources */,
