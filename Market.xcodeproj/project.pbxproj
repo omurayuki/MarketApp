@@ -32,6 +32,7 @@
 		C9B6195E237420AD002B1467 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6195D237420AD002B1467 /* HelperFunctions.swift */; };
 		C9B6196023745CA1002B1467 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6195F23745CA1002B1467 /* ItemViewController.swift */; };
 		C9B6196223752834002B1467 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6196123752834002B1467 /* ImageCollectionViewCell.swift */; };
+		C9B6196423753BC8002B1467 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6196323753BC8002B1467 /* Basket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		C9B6195D237420AD002B1467 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		C9B6195F23745CA1002B1467 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		C9B6196123752834002B1467 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		C9B6196323753BC8002B1467 /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		DB597859E0E3564867DF7B02 /* Pods-MarketUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarketUITests/Pods-MarketUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F466C0A03170DF2370966F07 /* Pods-Market.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.release.xcconfig"; path = "Pods/Target Support Files/Pods-Market/Pods-Market.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,6 +240,7 @@
 			children = (
 				C9701F2D2372B1DF00CAD944 /* Category.swift */,
 				C93D00652372F38100C174BE /* Item.swift */,
+				C9B6196323753BC8002B1467 /* Basket.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				C923B0092371E19B0097C25F /* AppDelegate.swift in Sources */,
 				C93D00642372F25200C174BE /* ItemsTableViewController.swift in Sources */,
 				C9701F292372AC6100CAD944 /* FirebaseCollectionReference.swift in Sources */,
+				C9B6196423753BC8002B1467 /* Basket.swift in Sources */,
 				C9B6195C23740808002B1467 /* ItemTableViewCell.swift in Sources */,
 				C9B6195E237420AD002B1467 /* HelperFunctions.swift in Sources */,
 				C93D00682373328500C174BE /* AddItemViewController.swift in Sources */,

@@ -19,6 +19,8 @@ class ItemViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         downloadPictures()
+        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backAction))]
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(named: "basket"), style: .plain, target: self, action: #selector(addToBasket))]
     }
     
     private func downloadPictures() {
@@ -39,6 +41,14 @@ class ItemViewController: UIViewController {
             priceLabel.text = convertToCurrency(item.price)
             descriptionTextView.text = item.description
         }
+    }
+    
+    @objc func backAction() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func addToBasket() {
+        
     }
 }
 
