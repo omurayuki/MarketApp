@@ -48,14 +48,15 @@ class ItemViewController: UIViewController {
     }
     
     @objc func addToBasket() {
-        downloadBasketFromFirestore("1234") { basket in
-            if basket == nil {
-                self.createNewBasket()
-            } else {
-                basket!.itemIds.append(self.item.id)
-                self.updateBusket(basket: basket!, withValues: [kITEMIDS: basket!.itemIds])
-            }
-        }
+//        downloadBasketFromFirestore("1234") { basket in
+//            if basket == nil {
+//                self.createNewBasket()
+//            } else {
+//                basket!.itemIds.append(self.item.id)
+//                self.updateBusket(basket: basket!, withValues: [kITEMIDS: basket!.itemIds])
+//            }
+//        }
+        showLoginView()
     }
     
     private func createNewBasket() {
@@ -84,6 +85,11 @@ class ItemViewController: UIViewController {
                 self.hud.dismiss(afterDelay: 2.0)
             }
         }
+    }
+    
+    private func showLoginView() {
+        let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
+        self.present(loginView, animated: true, completion: nil)
     }
 }
 
