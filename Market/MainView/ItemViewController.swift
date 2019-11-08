@@ -11,6 +11,9 @@ class ItemViewController: UIViewController {
     var item: Item!
     var itemImages: [UIImage] = []
     let hud = JGProgressHUD(style: .dark)
+    private let sectionInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+    private let cellHeight: CGFloat = 196.0
+    private let itemsPerRow: CGFloat = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +50,26 @@ extension ItemViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
-        
+        if itemImages.count > 0 {
+            cell.setupImageWith(itemImage: itemImages[indexPath.item])
+        }
         return cell
+    }
+}
+
+extension ItemViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let availableWidth = collectionView.frame.width - sectionInsets.left
+        
+        return CGSize(width: availableWidth, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInsets.left
     }
 }
