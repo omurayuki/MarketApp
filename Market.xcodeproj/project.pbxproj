@@ -29,6 +29,9 @@
 		C9701F292372AC6100CAD944 /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9701F282372AC6100CAD944 /* FirebaseCollectionReference.swift */; };
 		C9701F2E2372B1DF00CAD944 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9701F2D2372B1DF00CAD944 /* Category.swift */; };
 		C9B6195C23740808002B1467 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6195B23740808002B1467 /* ItemTableViewCell.swift */; };
+		C9B6195E237420AD002B1467 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6195D237420AD002B1467 /* HelperFunctions.swift */; };
+		C9B6196023745CA1002B1467 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6195F23745CA1002B1467 /* ItemViewController.swift */; };
+		C9B6196223752834002B1467 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6196123752834002B1467 /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		C9701F282372AC6100CAD944 /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
 		C9701F2D2372B1DF00CAD944 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C9B6195B23740808002B1467 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		C9B6195D237420AD002B1467 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		C9B6195F23745CA1002B1467 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		C9B6196123752834002B1467 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		DB597859E0E3564867DF7B02 /* Pods-MarketUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarketUITests/Pods-MarketUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F466C0A03170DF2370966F07 /* Pods-Market.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.release.xcconfig"; path = "Pods/Target Support Files/Pods-Market/Pods-Market.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,6 +207,7 @@
 				C93D00612372B3A300C174BE /* Constants.swift */,
 				C93D00692373ECE000C174BE /* Richability.swift */,
 				C93D006B2373EE2F00C174BE /* Downloader.swift */,
+				C9B6195D237420AD002B1467 /* HelperFunctions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -211,6 +218,7 @@
 				C95679B42371EB1E00B0BAF0 /* CategoryCollectionViewController.swift */,
 				C93D00632372F25200C174BE /* ItemsTableViewController.swift */,
 				C93D00672373328500C174BE /* AddItemViewController.swift */,
+				C9B6195F23745CA1002B1467 /* ItemViewController.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -220,6 +228,7 @@
 			children = (
 				C95679B62371EBB100B0BAF0 /* CategoryCollectionViewCell.swift */,
 				C9B6195B23740808002B1467 /* ItemTableViewCell.swift */,
+				C9B6196123752834002B1467 /* ImageCollectionViewCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -486,11 +495,14 @@
 			files = (
 				C95679B72371EBB100B0BAF0 /* CategoryCollectionViewCell.swift in Sources */,
 				C93D00662372F38100C174BE /* Item.swift in Sources */,
+				C9B6196223752834002B1467 /* ImageCollectionViewCell.swift in Sources */,
+				C9B6196023745CA1002B1467 /* ItemViewController.swift in Sources */,
 				C93D006C2373EE2F00C174BE /* Downloader.swift in Sources */,
 				C923B0092371E19B0097C25F /* AppDelegate.swift in Sources */,
 				C93D00642372F25200C174BE /* ItemsTableViewController.swift in Sources */,
 				C9701F292372AC6100CAD944 /* FirebaseCollectionReference.swift in Sources */,
 				C9B6195C23740808002B1467 /* ItemTableViewCell.swift in Sources */,
+				C9B6195E237420AD002B1467 /* HelperFunctions.swift in Sources */,
 				C93D00682373328500C174BE /* AddItemViewController.swift in Sources */,
 				C923B00B2371E19B0097C25F /* SceneDelegate.swift in Sources */,
 				C93D00622372B3A300C174BE /* Constants.swift in Sources */,

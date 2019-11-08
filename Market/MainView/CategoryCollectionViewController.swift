@@ -18,7 +18,7 @@ class CategoryCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "categoryToItemsSeg", sender: categoryArray[indexPath.item])
+        performSegue(withIdentifier: "categoryToItemsSeg", sender: categoryArray[indexPath.row])
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,7 +41,7 @@ class CategoryCollectionViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "categoryToItemsSeg" {
             let vc = segue.destination as! ItemsTableViewController
-            vc.category = sender as! Category
+            vc.recieveCategory(sender as? Category)
         }
     }
 }

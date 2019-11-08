@@ -19,18 +19,19 @@ class ItemsTableViewController: UITableViewController {
         }
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return itemArray.count
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return itemArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ItemTableViewCell
         cell.generateCell(itemArray[indexPath.row])
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        showItemView(itemArray[indexPath.row])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,5 +46,15 @@ class ItemsTableViewController: UITableViewController {
             self.itemArray = allItems
             self.tableView.reloadData()
         }
+    }
+    
+    private func showItemView(_ item: Item) {
+        let itemVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "itemView") as! ItemViewController
+        itemVC.item = item
+        self.navigationController?.pushViewController(itemVC, animated: true)
+    }
+    
+    func recieveCategory(_ category: Category?) {
+        self.category = category
     }
 }

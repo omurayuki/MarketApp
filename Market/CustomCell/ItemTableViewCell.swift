@@ -21,7 +21,8 @@ class ItemTableViewCell: UITableViewCell {
         
         nameLabel.text = item.name
         descriptionLabel.text = item.description
-        priceLabel.text = "\(item.price!)"
+        priceLabel.text = convertToCurrency(item.price)
+        priceLabel.adjustsFontSizeToFitWidth = true
         
         if item.imageLinks != nil && item.imageLinks.count > 0 {
             downloadImages(imageUrls: [item.imageLinks.first!]) { images in
