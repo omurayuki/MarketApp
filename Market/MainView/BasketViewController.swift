@@ -87,6 +87,12 @@ class BasketViewController: UIViewController {
         return "Total price: " + convertToCurrency(totalPrice)
     }
     
+    private func showItemView(withItem: Item) {
+        let itemVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "itemView") as! ItemViewController
+        itemVC.item = withItem
+        self.navigationController?.pushViewController(itemVC, animated: true)
+    }
+    
     private func checkoutButtonStatusUpdate() {
         checkOutButtonOutlet.isEnabled = allItems.count > 0
         if checkOutButtonOutlet.isEnabled {
@@ -99,6 +105,15 @@ class BasketViewController: UIViewController {
     private func disableCheckoutButton() {
         checkOutButtonOutlet.isEnabled = false
         checkOutButtonOutlet.backgroundColor = .systemRed
+    }
+    
+    private func removeItemFromBasket(itemId: String) {
+        for i in 0..<basket!.itemIds.count {
+            if itemId == basket?.itemIds[i] {
+                basket?.itemIds.remove(at: i)
+                return
+            }
+        }
     }
 }
 
@@ -114,6 +129,31 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
         cell.generateCell(allItems[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let itemToDelete = allItems[indexPath.row]
+            allItems.remove(at: indexPath.row)
+            tableView.reloadData()
+            
+            removeItemFromBasket(itemId: itemToDelete.id)
+            updateBasketInFirestore(basket!, withValues: [kITEMIDS: basket?.itemIds]) { error in
+                if error != nil {
+                    print("error updating the basket", error!.localizedDescription)
+                }
+                self.getBasketItems()
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        showItemView(withItem: allItems[indexPath.item])
     }
 }
 
