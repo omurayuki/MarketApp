@@ -36,6 +36,7 @@
 		C9B6196623757E7B002B1467 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6196523757E7B002B1467 /* BasketViewController.swift */; };
 		C9B619682375999D002B1467 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B619672375999D002B1467 /* WelcomeViewController.swift */; };
 		C9B6196A23759D19002B1467 /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6196923759D19002B1467 /* MUser.swift */; };
+		C9D9774D2375E10600735E17 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9774C2375E10600735E17 /* ProfileTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		C9B6196523757E7B002B1467 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		C9B619672375999D002B1467 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C9B6196923759D19002B1467 /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
+		C9D9774C2375E10600735E17 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		DB597859E0E3564867DF7B02 /* Pods-MarketUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarketUITests/Pods-MarketUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F466C0A03170DF2370966F07 /* Pods-Market.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.release.xcconfig"; path = "Pods/Target Support Files/Pods-Market/Pods-Market.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,6 +231,7 @@
 				C9B6195F23745CA1002B1467 /* ItemViewController.swift */,
 				C9B6196523757E7B002B1467 /* BasketViewController.swift */,
 				C9B619672375999D002B1467 /* WelcomeViewController.swift */,
+				C9D9774C2375E10600735E17 /* ProfileTableViewController.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9D9774D2375E10600735E17 /* ProfileTableViewController.swift in Sources */,
 				C9B6196623757E7B002B1467 /* BasketViewController.swift in Sources */,
 				C95679B72371EBB100B0BAF0 /* CategoryCollectionViewCell.swift in Sources */,
 				C93D00662372F38100C174BE /* Item.swift in Sources */,
