@@ -1,5 +1,6 @@
 import UIKit
 import NVActivityIndicatorView
+import EmptyDataSet_Swift
 
 class SearchViewController: UIViewController {
 
@@ -18,8 +19,10 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView()
         searchTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -142,5 +145,20 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         showItemView(withItem: searchResults[indexPath.row])
+    }
+}
+
+extension SearchViewController: EmptyDataSetSource, EmptyDataSetDelegate {
+        
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "No Items To Display!")
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage(named: "emptyData")
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "Please check back later!")
     }
 }

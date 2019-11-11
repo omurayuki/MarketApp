@@ -1,4 +1,5 @@
 import UIKit
+import EmptyDataSet_Swift
 
 class ItemsTableViewController: UITableViewController {
     
@@ -10,6 +11,8 @@ class ItemsTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         self.title = category?.name
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,5 +59,20 @@ class ItemsTableViewController: UITableViewController {
     
     func recieveCategory(_ category: Category?) {
         self.category = category
+    }
+}
+
+extension ItemsTableViewController: EmptyDataSetSource, EmptyDataSetDelegate {
+    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "No Items To Display!")
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage(named: "emptyData")
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "Please check back later!")
     }
 }
