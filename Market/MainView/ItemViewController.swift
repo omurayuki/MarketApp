@@ -48,21 +48,24 @@ class ItemViewController: UIViewController {
     }
     
     @objc func addToBasket() {
-//        downloadBasketFromFirestore("1234") { basket in
-//            if basket == nil {
-//                self.createNewBasket()
-//            } else {
-//                basket!.itemIds.append(self.item.id)
-//                self.updateBusket(basket: basket!, withValues: [kITEMIDS: basket!.itemIds])
-//            }
-//        }
-        showLoginView()
+        if MUser.currentUser() != nil {
+            downloadBasketFromFirestore(MUser.currentId()) { basket in
+                if basket == nil {
+                    self.createNewBasket()
+                } else {
+                    basket!.itemIds.append(self.item.id)
+                    self.updateBusket(basket: basket!, withValues: [kITEMIDS: basket!.itemIds])
+                }
+            }
+        } else {
+            showLoginView()
+        }
     }
     
     private func createNewBasket() {
         let newBasket = Basket()
         newBasket.id = UUID().uuidString
-        newBasket.ownerId = "1234"
+        newBasket.ownerId = MUser.currentId()
         newBasket.itemIds = [self.item.id]
         saveBasketToFirestore(newBasket)
         self.hud.textLabel.text = "added to basket!"

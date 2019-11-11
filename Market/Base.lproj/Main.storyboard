@@ -898,7 +898,7 @@
         <!--Purchased Items-->
         <scene sceneID="Dfr-sm-6rw">
             <objects>
-                <tableViewController id="Wne-90-AwM" sceneMemberID="viewController">
+                <tableViewController id="Wne-90-AwM" customClass="PurchasedHistoryTableViewController" customModule="Market" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EYX-m0-pYs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
