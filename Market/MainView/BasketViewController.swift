@@ -15,13 +15,23 @@ class BasketViewController: UIViewController {
     
     let hud = JGProgressHUD(style: .dark)
     
+    var environment: String = PayPalEnvironmentNoNetwork {
+        willSet(newEnvironment) {
+            if newEnvironment != environment {
+                PayPalMobile.preconnect(withEnvironment: newEnvironment)
+            }
+        }
+    }
+    
+    var payPalConfig = PayPalConfiguration()
+    
     //MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.tableFooterView = footerView
-        
+        setupPayPal()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,11 +48,7 @@ class BasketViewController: UIViewController {
     
     @IBAction func checkOutButtonPressed(_ sender: Any) {
         if MUser.currentUser()!.onBoard {
-            
-            tempFunction()
-            
-            addItemsToPurchaseHistory(self.purchasedItemIds)
-            emptyTheBasket()
+            payButtonPressed()
 
         } else {
             
@@ -176,6 +182,39 @@ class BasketViewController: UIViewController {
         }
         
     }
+    
+    private func setupPayPal() {
+        payPalConfig.acceptCreditCards = true
+        payPalConfig.merchantName = "iOS-Dev-School-Marget"
+        payPalConfig.merchantPrivacyPolicyURL = URL(string: "https://www.paypal.com/webapps/mpp/ua/privacy-full")
+        payPalConfig.merchantUserAgreementURL = URL(string: "https://www.paypal.com/webapps/mpp/ua/useragreement-full")
+        payPalConfig.languageOrLocale = Locale.preferredLanguages[0]
+        payPalConfig.payPalShippingAddressOption = .both
+    }
+    
+    private func payButtonPressed() {
+        var itemsToBuy: [PayPalItem] = []
+        for item in allItems {
+            let tempItem = PayPalItem(name: item.name, withQuantity: 1, withPrice: NSDecimalNumber(value: item.price), withCurrency: "JPY", withSku: nil)
+            purchasedItemIds.append(item.id)
+            itemsToBuy.append(tempItem)
+        }
+        
+        let subTotal = PayPalItem.totalPrice(forItems: itemsToBuy)
+        let shippingCost = NSDecimalNumber(string: "50.0")
+        let tax = NSDecimalNumber(string: "5.00")
+        let paymentDetails = PayPalPaymentDetails(subtotal: subTotal, withShipping: shippingCost, withTax: tax)
+        let total = subTotal.adding(shippingCost).adding(tax)
+        let payment = PayPalPayment(amount: total, currencyCode: "JPY", shortDescription: "payment to iOS school", intent: .sale)
+        payment.items = itemsToBuy
+        payment.paymentDetails = paymentDetails
+        if payment.processable {
+            let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: payPalConfig, delegate: self)
+            present(paymentViewController!, animated: true, completion: nil)
+        } else {
+            print("payment not processable")
+        }
+    }
 }
 
 extension BasketViewController: UITableViewDataSource, UITableViewDelegate {
@@ -253,4 +292,18 @@ func downloadItems(_ withIds: [String], completion: @escaping (_ itemArray: [Ite
         completion(itemArray)
     }
     
+}
+
+extension BasketViewController: PayPalPaymentDelegate {
+    
+    func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
+        paymentViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
+        paymentViewController.dismiss(animated: true) {
+            self.addItemsToPurchaseHistory(self.purchasedItemIds)
+            self.emptyTheBasket()
+        }
+    }
 }

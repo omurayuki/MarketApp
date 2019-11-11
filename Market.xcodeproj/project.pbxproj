@@ -93,6 +93,8 @@
 		C9701F2D2372B1DF00CAD944 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C970421123791DE4007EF17B /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		C970421323793BC2007EF17B /* PurchasedHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedHistoryTableViewController.swift; sourceTree = "<group>"; };
+		C970421523794AD4007EF17B /* Market-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Market-Bridging-Header.h"; sourceTree = "<group>"; };
+		C970421723794B1E007EF17B /* NSObject+Market_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Market_Bridging_Header.h"; sourceTree = "<group>"; };
 		C9B6195B23740808002B1467 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		C9B6195D237420AD002B1467 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		C9B6195F23745CA1002B1467 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				C923B0082371E19B0097C25F /* AppDelegate.swift */,
 				C923B00A2371E19B0097C25F /* SceneDelegate.swift */,
+				C970421723794B1E007EF17B /* NSObject+Market_Bridging_Header.h */,
 				C9701F2B2372B1AF00CAD944 /* MainView */,
 				C9701F2C2372B1C000CAD944 /* CustomCell */,
 				C9701F2F2372B1E800CAD944 /* Model */,
@@ -194,6 +197,7 @@
 				C923B0132371E19D0097C25F /* LaunchScreen.storyboard */,
 				C923B0162371E19D0097C25F /* Info.plist */,
 				C95679B82371EDA300B0BAF0 /* GoogleService-Info.plist */,
+				C970421523794AD4007EF17B /* Market-Bridging-Header.h */,
 			);
 			path = Market;
 			sourceTree = "<group>";
@@ -346,6 +350,7 @@
 				TargetAttributes = {
 					C923B0042371E19B0097C25F = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 					};
 					C923B01A2371E19D0097C25F = {
 						CreatedOnToolsVersion = 11.1;
@@ -722,15 +727,19 @@
 			baseConfigurationReference = 11310ECC23049013860BC904 /* Pods-Market.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WF5Y5M59G;
 				INFOPLIST_FILE = Market/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.yuki.market.Market;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Market/Market-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -741,15 +750,18 @@
 			baseConfigurationReference = F466C0A03170DF2370966F07 /* Pods-Market.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5WF5Y5M59G;
 				INFOPLIST_FILE = Market/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.yuki.market.Market;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Market/Market-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
