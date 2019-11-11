@@ -121,6 +121,21 @@ class MUser {
             })
         })
     }
+    
+    class func logOutCurrentUser(completion: @escaping (_ error: Error?) -> Void) {
+        
+        do {
+            try Auth.auth().signOut()
+            UserDefaults.standard.removeObject(forKey: kCURRENTUSER)
+            UserDefaults.standard.synchronize()
+            completion(nil)
+
+        } catch let error as NSError {
+            completion(error)
+        }
+        
+        
+    }
 
     
     //MARK: - Register user
@@ -184,4 +199,22 @@ func saveUserLocally(mUserDictionary: NSDictionary) {
 
 func userDictionaryFrom(user: MUser) -> NSDictionary {
     return NSDictionary(objects: [user.objectId, user.email, user.firstName, user.lastName, user.fullName, user.fullAddress ?? "", user.onBoard, user.purchasedItemIds], forKeys: [kOBJECTID as NSCopying, kEMAIL as NSCopying, kFIRSTNAME as NSCopying, kLASTNAME as NSCopying, kFULLNAME as NSCopying, kFULLADDRESS as NSCopying, kONBOARD as NSCopying, kPURCHASEDITEMIDS as NSCopying])
+}
+
+// MARK: - Update user
+func updateCurrentUserInFirestore(withValues: [String : Any], completion: @escaping (_ error: Error?) -> Void) {
+    if let dictionary = UserDefaults.standard.object(forKey: kCURRENTUSER) {
+        
+        let userObject = (dictionary as! NSDictionary).mutableCopy() as! NSMutableDictionary
+        userObject.setValuesForKeys(withValues)
+        
+        FirebaseReference(.User).document(MUser.currentId()).updateData(withValues) { (error) in
+            
+            completion(error)
+            
+            if error == nil {
+                saveUserLocally(mUserDictionary: userObject)
+            }
+        }
+    }
 }

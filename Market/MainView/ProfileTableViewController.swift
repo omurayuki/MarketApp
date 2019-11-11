@@ -28,6 +28,11 @@ class ProfileTableViewController: UITableViewController {
         return 3
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
     //MARK: - Helpers
     
     private func checkLoginStatus() {
@@ -89,6 +94,6 @@ class ProfileTableViewController: UITableViewController {
     }
     
     private func goToEditProfile() {
-        print("edit profile")
+        performSegue(withIdentifier: "profileToEditSeg", sender: self)
     }
 }
