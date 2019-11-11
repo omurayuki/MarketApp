@@ -2,6 +2,9 @@ import Foundation
 
 // IDs and Keys
 public let kFILEREFERENCE = "gs://market-30ba7.appspot.com"
+public let kALGORIA_APP_ID = "1HTSEMOQFB"
+public let kALGORIA_SEARCH_KEY = "20cbe2cf0c0639c1661f22db59227072"
+public let kALGORIA_ADMIN_KEY = "2651357910ca418ac64b5cbbfa572a56"
 
 // Firebase Headers
 public let kUSER_PATH = "User"

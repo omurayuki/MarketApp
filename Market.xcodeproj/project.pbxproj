@@ -30,6 +30,8 @@
 		C9701F2E2372B1DF00CAD944 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9701F2D2372B1DF00CAD944 /* Category.swift */; };
 		C970421223791DE4007EF17B /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970421123791DE4007EF17B /* EditProfileViewController.swift */; };
 		C970421423793BC2007EF17B /* PurchasedHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970421323793BC2007EF17B /* PurchasedHistoryTableViewController.swift */; };
+		C970421923796DA5007EF17B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970421823796DA4007EF17B /* SearchViewController.swift */; };
+		C970421B2379820A007EF17B /* AlgoriaSearvice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970421A2379820A007EF17B /* AlgoriaSearvice.swift */; };
 		C9B6195C23740808002B1467 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6195B23740808002B1467 /* ItemTableViewCell.swift */; };
 		C9B6195E237420AD002B1467 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6195D237420AD002B1467 /* HelperFunctions.swift */; };
 		C9B6196023745CA1002B1467 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6195F23745CA1002B1467 /* ItemViewController.swift */; };
@@ -95,6 +97,8 @@
 		C970421323793BC2007EF17B /* PurchasedHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedHistoryTableViewController.swift; sourceTree = "<group>"; };
 		C970421523794AD4007EF17B /* Market-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Market-Bridging-Header.h"; sourceTree = "<group>"; };
 		C970421723794B1E007EF17B /* NSObject+Market_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Market_Bridging_Header.h"; sourceTree = "<group>"; };
+		C970421823796DA4007EF17B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C970421A2379820A007EF17B /* AlgoriaSearvice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoriaSearvice.swift; sourceTree = "<group>"; };
 		C9B6195B23740808002B1467 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		C9B6195D237420AD002B1467 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		C9B6195F23745CA1002B1467 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 				C9D9774C2375E10600735E17 /* ProfileTableViewController.swift */,
 				C970421123791DE4007EF17B /* EditProfileViewController.swift */,
 				C970421323793BC2007EF17B /* PurchasedHistoryTableViewController.swift */,
+				C970421823796DA4007EF17B /* SearchViewController.swift */,
 				C9D97750237908D300735E17 /* Login */,
 			);
 			path = MainView;
@@ -265,6 +270,7 @@
 				C9B6196923759D19002B1467 /* MUser.swift */,
 				C93D00652372F38100C174BE /* Item.swift */,
 				C9B6196323753BC8002B1467 /* Basket.swift */,
+				C970421A2379820A007EF17B /* AlgoriaSearvice.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -545,9 +551,11 @@
 				C970421423793BC2007EF17B /* PurchasedHistoryTableViewController.swift in Sources */,
 				C9B6196423753BC8002B1467 /* Basket.swift in Sources */,
 				C9B6195C23740808002B1467 /* ItemTableViewCell.swift in Sources */,
+				C970421923796DA5007EF17B /* SearchViewController.swift in Sources */,
 				C9B6195E237420AD002B1467 /* HelperFunctions.swift in Sources */,
 				C93D00682373328500C174BE /* AddItemViewController.swift in Sources */,
 				C923B00B2371E19B0097C25F /* SceneDelegate.swift in Sources */,
+				C970421B2379820A007EF17B /* AlgoriaSearvice.swift in Sources */,
 				C93D00622372B3A300C174BE /* Constants.swift in Sources */,
 				C93D006A2373ECE000C174BE /* Richability.swift in Sources */,
 				C95679B52371EB1E00B0BAF0 /* CategoryCollectionViewController.swift in Sources */,

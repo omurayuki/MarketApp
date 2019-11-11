@@ -509,7 +509,7 @@
         <!--Search-->
         <scene sceneID="cPI-ZH-7te">
             <objects>
-                <viewController id="moj-7P-ieV" sceneMemberID="viewController">
+                <viewController id="moj-7P-ieV" customClass="SearchViewController" customModule="Market" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k6w-6a-Ahx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -525,7 +525,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfs-Ti-fpo">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfs-Ti-fpo">
                                                 <rect key="frame" x="8" y="62" width="398" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -534,6 +534,9 @@
                                                 <state key="normal" title="Search">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="searchButtonPressed:" destination="moj-7P-ieV" eventType="touchUpInside" id="gaT-8y-r9q"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -611,6 +614,10 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="moj-7P-ieV" id="cD8-Ij-Cpl"/>
+                                            <outlet property="delegate" destination="moj-7P-ieV" id="RRo-iU-jUw"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>
@@ -630,8 +637,18 @@
                         <viewLayoutGuide key="safeArea" id="us5-oP-xZi"/>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="ohN-oa-dPG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Zl1-Mj-02T"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Zl1-Mj-02T">
+                            <connections>
+                                <action selector="showSearchBarBattonPressed:" destination="moj-7P-ieV" id="WEG-oz-XUI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchButtonOutlet" destination="Tfs-Ti-fpo" id="TEW-W5-bTH"/>
+                        <outlet property="searchOptionsView" destination="IKq-sp-xiv" id="xcD-3T-zlG"/>
+                        <outlet property="searchTextField" destination="Ucg-Hh-TDY" id="orH-TN-HbY"/>
+                        <outlet property="tableView" destination="0MU-t9-trl" id="erx-W8-ZrS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6wx-sJ-cBg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
