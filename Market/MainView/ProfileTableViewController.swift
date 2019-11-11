@@ -56,7 +56,7 @@ class ProfileTableViewController: UITableViewController {
     
     @objc func rightBarButtonItemPressed() {
         
-        if editButtonItem.title == "Login" {
+        if editBarButtonOutlet.title == "Login" {
             //show login vire
             showLoginView()
         } else {
@@ -78,6 +78,8 @@ class ProfileTableViewController: UITableViewController {
                 finishRegistrationButtonOutlet.isEnabled = true
                 finishRegistrationButtonOutlet.tintColor = .red
             }
+            
+            purchaseHistoryButtonOutlet.isEnabled = true
             
         } else {
             finishRegistrationButtonOutlet.setTitle("Logged out", for: .normal)
