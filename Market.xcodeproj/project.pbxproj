@@ -32,6 +32,7 @@
 		C970421423793BC2007EF17B /* PurchasedHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970421323793BC2007EF17B /* PurchasedHistoryTableViewController.swift */; };
 		C970421923796DA5007EF17B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970421823796DA4007EF17B /* SearchViewController.swift */; };
 		C970421B2379820A007EF17B /* AlgoriaSearvice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970421A2379820A007EF17B /* AlgoriaSearvice.swift */; };
+		C9A030EC237A9E5200FE5425 /* StripeSearvice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A030EB237A9E5200FE5425 /* StripeSearvice.swift */; };
 		C9B6195C23740808002B1467 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6195B23740808002B1467 /* ItemTableViewCell.swift */; };
 		C9B6195E237420AD002B1467 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6195D237420AD002B1467 /* HelperFunctions.swift */; };
 		C9B6196023745CA1002B1467 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6195F23745CA1002B1467 /* ItemViewController.swift */; };
@@ -99,6 +100,7 @@
 		C970421723794B1E007EF17B /* NSObject+Market_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Market_Bridging_Header.h"; sourceTree = "<group>"; };
 		C970421823796DA4007EF17B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C970421A2379820A007EF17B /* AlgoriaSearvice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoriaSearvice.swift; sourceTree = "<group>"; };
+		C9A030EB237A9E5200FE5425 /* StripeSearvice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeSearvice.swift; sourceTree = "<group>"; };
 		C9B6195B23740808002B1467 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		C9B6195D237420AD002B1467 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		C9B6195F23745CA1002B1467 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				C93D00652372F38100C174BE /* Item.swift */,
 				C9B6196323753BC8002B1467 /* Basket.swift */,
 				C970421A2379820A007EF17B /* AlgoriaSearvice.swift */,
+				C9A030EB237A9E5200FE5425 /* StripeSearvice.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Market/Pods-Market-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/EmptyDataSet-Swift/EmptyDataSet_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -435,6 +439,7 @@
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -444,6 +449,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EmptyDataSet_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -453,6 +459,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -540,6 +547,7 @@
 				C9B6196623757E7B002B1467 /* BasketViewController.swift in Sources */,
 				C95679B72371EBB100B0BAF0 /* CategoryCollectionViewCell.swift in Sources */,
 				C93D00662372F38100C174BE /* Item.swift in Sources */,
+				C9A030EC237A9E5200FE5425 /* StripeSearvice.swift in Sources */,
 				C9D9774F237908C400735E17 /* FinishRegistrationViewController.swift in Sources */,
 				C9B6196223752834002B1467 /* ImageCollectionViewCell.swift in Sources */,
 				C9B6196023745CA1002B1467 /* ItemViewController.swift in Sources */,
