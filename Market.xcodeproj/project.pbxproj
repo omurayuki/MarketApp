@@ -33,6 +33,7 @@
 		C970421923796DA5007EF17B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970421823796DA4007EF17B /* SearchViewController.swift */; };
 		C970421B2379820A007EF17B /* AlgoriaSearvice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970421A2379820A007EF17B /* AlgoriaSearvice.swift */; };
 		C9A030EC237A9E5200FE5425 /* StripeSearvice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A030EB237A9E5200FE5425 /* StripeSearvice.swift */; };
+		C9A030EE237AA9F800FE5425 /* CardInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A030ED237AA9F800FE5425 /* CardInfoViewController.swift */; };
 		C9B6195C23740808002B1467 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6195B23740808002B1467 /* ItemTableViewCell.swift */; };
 		C9B6195E237420AD002B1467 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6195D237420AD002B1467 /* HelperFunctions.swift */; };
 		C9B6196023745CA1002B1467 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6195F23745CA1002B1467 /* ItemViewController.swift */; };
@@ -101,6 +102,7 @@
 		C970421823796DA4007EF17B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C970421A2379820A007EF17B /* AlgoriaSearvice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoriaSearvice.swift; sourceTree = "<group>"; };
 		C9A030EB237A9E5200FE5425 /* StripeSearvice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeSearvice.swift; sourceTree = "<group>"; };
+		C9A030ED237AA9F800FE5425 /* CardInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoViewController.swift; sourceTree = "<group>"; };
 		C9B6195B23740808002B1467 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		C9B6195D237420AD002B1467 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		C9B6195F23745CA1002B1467 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				C9D9774C2375E10600735E17 /* ProfileTableViewController.swift */,
 				C970421123791DE4007EF17B /* EditProfileViewController.swift */,
 				C970421323793BC2007EF17B /* PurchasedHistoryTableViewController.swift */,
+				C9A030ED237AA9F800FE5425 /* CardInfoViewController.swift */,
 				C970421823796DA4007EF17B /* SearchViewController.swift */,
 				C9D97750237908D300735E17 /* Login */,
 			);
@@ -543,6 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A030EE237AA9F800FE5425 /* CardInfoViewController.swift in Sources */,
 				C9D9774D2375E10600735E17 /* ProfileTableViewController.swift in Sources */,
 				C9B6196623757E7B002B1467 /* BasketViewController.swift in Sources */,
 				C95679B72371EBB100B0BAF0 /* CategoryCollectionViewCell.swift in Sources */,

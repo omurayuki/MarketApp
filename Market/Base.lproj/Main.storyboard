@@ -267,6 +267,46 @@
             </objects>
             <point key="canvasLocation" x="4378.2608695652179" y="-157.36607142857142"/>
         </scene>
+        <!--Card Info View Controller-->
+        <scene sceneID="yYS-ct-f4A">
+            <objects>
+                <viewController storyboardIdentifier="cardInfoVC" id="KpG-Cf-JeQ" customClass="CardInfoViewController" customModule="Market" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0NH-By-ho2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdT-Lu-jYW">
+                                <rect key="frame" x="20" y="49" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="KpG-Cf-JeQ" eventType="touchUpInside" id="yyL-55-0K8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lQ-MY-R2C">
+                                <rect key="frame" x="357" y="49" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="KpG-Cf-JeQ" eventType="touchUpInside" id="sjG-C6-ely"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Pcv-HI-EQT" firstAttribute="trailing" secondItem="2lQ-MY-R2C" secondAttribute="trailing" constant="20" id="R2o-9R-tw3"/>
+                            <constraint firstItem="UdT-Lu-jYW" firstAttribute="leading" secondItem="Pcv-HI-EQT" secondAttribute="leading" constant="20" id="Udn-qA-6Qn"/>
+                            <constraint firstItem="UdT-Lu-jYW" firstAttribute="top" secondItem="Pcv-HI-EQT" secondAttribute="top" constant="5" id="Z6u-rc-cb0"/>
+                            <constraint firstItem="2lQ-MY-R2C" firstAttribute="top" secondItem="Pcv-HI-EQT" secondAttribute="top" constant="5" id="q13-8f-afH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pcv-HI-EQT"/>
+                    </view>
+                    <connections>
+                        <outlet property="doneButtonOutlet" destination="2lQ-MY-R2C" id="11j-rj-D0h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fDV-Hu-adG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5442" y="114"/>
+        </scene>
         <!--Item View Controller-->
         <scene sceneID="EBW-nj-s1e">
             <objects>

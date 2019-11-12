@@ -24,7 +24,6 @@ class StripeClient {
         Alamofire.request(url, method: .post, parameters: params).validate(statusCode: 200..<300).responseData { (response) in
             switch response.result {
             case .success(_):
-                print("payment successful")
                 completion(nil)
             case .failure(let error):
                 completion(error)

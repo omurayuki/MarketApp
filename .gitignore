@@ -263,3 +263,12 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/xcode,macos,swift,appcode,windows,carthage,fastlane,cocoapods,swiftpackagemanager
 
 R.generated.swift
+
+  Backend/node_modules/
+
+  *.com
+  *.class
+  *.dll
+  *.exe
+  *.o
+  *.so
